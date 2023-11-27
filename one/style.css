@@ -1,0 +1,54 @@
+
+
+html {
+    font-family: 'Bungee Spice', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: aliceblue;
+}
+
+header {
+    text-align: center;
+    position: relative;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+}
+
+header .again {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: transparent; /* Add this line to ensure main doesn't have a background color */
+}
+
+.left, .right {
+    flex: 1;
+}
+
+.guess, .check {
+    padding: 10px;
+    margin-bottom: 10px;
+    font-family: 'Bungee Spice', sans-serif;;
+}
+
+.score, .highscore {
+    margin: 0;
+}
