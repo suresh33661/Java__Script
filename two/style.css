@@ -1,0 +1,43 @@
+
+
+
+html {
+    font-size: 63%;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    color: #333;
+    line-height: 1.5;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, red,#ff6656);
+}
+
+.show-modal{
+    font-size: 2rem;
+    font-weight: 800;
+    padding: 1.75rem 1.5rem;
+    margin: 5rem;
+    border: none;
+    border-radius: 10rem;
+    background: linear-gradient(orange,red);
+   
+}
+.show-modal:hover {
+    cursor: pointer;
+    background: linear-gradient(red,orange);
+    box-shadow: 0 0 0 0.5rem rgba(0,0,0,0.25);
+    transform: scale(1.05);
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+.hidden {
+    display: none;
+    background-color: azure;
+    align-items: center;
+    justify-content: center;
+}
