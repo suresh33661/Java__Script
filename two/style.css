@@ -37,7 +37,9 @@ body{
 }
 .hidden {
     display: none;
-    background-color: azure;
-    align-items: center;
     justify-content: center;
+    background-color: white;
+    height: 300px;
+
+
 }
