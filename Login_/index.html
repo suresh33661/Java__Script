@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bankist</title>
+    <link rel="stylesheet" href="/Login_/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <p class="welcome">Log in to get started</p>
+        <img src="/Login_/images/user-interface.png" alt="User Interface" class="user-interface" width="50" height="50">
+        <form class="login">
+            <input
+                type="text"
+                placeholder="User name"
+                class="login_input login_input--user"/>
+            <input
+                type="password"
+                placeholder="Enter password"
+                maxlength="4"
+                class="login_input login_input--pin"/>
+                <button class="login_btn">&rarr;</button>
+        </form>
+    </nav>
+    <main class="app">
+        <!-- Balance -->
+        <div class="balance">
+            <div>
+                <p class="balance_label">current balance</p>
+                <p class="balance_date">As of <span class="date">05/03/2023</span></p>
+                <p class="balance_value">0000$</p>
+            </div>
+        </div>
+        <!-- Movements -->
+        <div class="movements">
+            <div class="movements_row">
+                <div class="movements_type movements_type--deposit">Deposit</div>
+                <div class="movements_date">3 days ago</div>
+                <div class="movements_value">0000$
+                </div>
+
+                <div class="movements_row">
+                    <div class="movements_type movements_type--withdrawal">Withdrawal
+
+                    </div>
+                </div>
+                <div class="movements_date">24/02/2023</div>
+                <div class="movements_value">-0000$</div>
+
+
+            </div>
+        </div>
+
+    <!-- Summary -->
+    <div class="summary">
+        <div class="summary_row">
+            <div class="summary_label">In</div>
+            <div class="summary_value summary_value--in">0000$</div>
+        </div>
+        <div class="summary_row">
+            <div class="summary_label">Out</div>
+            <div class="summary_value summary_value--out">-0000$</div>
+        </div>
+        <div class="summary_row">
+            <div class="summary_label">Interest</div>
+            <div class="summary_value summary_value--interest">0000$</div>
+        </div>
+    </main>
+    <script src="/Login_/index.js"></script>
+</body>
+</html>
