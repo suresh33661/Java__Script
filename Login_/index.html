@@ -30,31 +30,75 @@
     <main class="app">
         <!-- Balance -->
         <div class="balance">
-            <div>
+            <div class="line">
                 <p class="balance_label">current balance</p>
                 <p class="balance_date">As of <span class="date">05/03/2023</span></p>
-                <p class="balance_value">0000$</p>
             </div>
+            <p class="balance_value"><span class="balance_value_span">0000$</span></p>
+            
         </div>
         <!-- Movements -->
         <div class="movements">
             <div class="movements_row">
                 <div class="movements_type movements_type--deposit">Deposit</div>
                 <div class="movements_date">3 days ago</div>
-                <div class="movements_value">0000$
-                </div>
-
-                <div class="movements_row">
-                    <div class="movements_type movements_type--withdrawal">Withdrawal
-
-                    </div>
-                </div>
+                <div class="movements_value">0000$</div>
+            </div>
+            <div class="movements_row">
+                <div class="movements_type movements_type--withdrawal">Withdrawal</div>
                 <div class="movements_date">24/02/2023</div>
                 <div class="movements_value">-0000$</div>
-
-
             </div>
         </div>
+
+    
+        <div class="operation">
+            <!-- Money transfer -->
+
+            <div class="money-transfer">
+                <h2 class="money-transfer_heading">Transfer money</h2>
+
+                <div class="money-transfer_input--from">
+                    <p>From</p>
+                    <input
+                        type="text"
+                        placeholder="Transfer to"
+                        class="money-transfer_input money-transfer_input--to"/>
+                    <p>To</p>
+                    <input
+                        type="number"
+                        placeholder="Amount"
+                        class="money-transfer_input money-transfer_input--amount"/>
+                    <button class="money-transfer_btn">&rarr;</button>
+                </div>
+            </div>
+
+            <!-- Loan -->
+            <div class="loan">
+                <h2 class="loan_heading">Request loan</h2>
+                <input
+                    type="number"
+                    placeholder="Amount"
+                    class="loan_input loan_input--amount"/>
+                <button class="loan_btn">&rarr;</button>
+            </div>
+
+            <!-- Close account -->
+            <div class="close-account">
+                <h2 class="close-account_heading">Close account</h2>
+                <input
+                    type="text"
+                    placeholder="User name"
+                    class="close-account_input close-account_input--user"/>
+                <input
+                    type="password"
+                    placeholder="Enter password"
+                    maxlength="4"
+                    class="close-account_input close-account_input--pin"/>
+                <button class="close-account_btn">&rarr;</button>
+            </div>
+        </div>
+    </main>
 
     <!-- Summary -->
     <div class="summary">
@@ -70,7 +114,11 @@
             <div class="summary_label">Interest</div>
             <div class="summary_value summary_value--interest">0000$</div>
         </div>
-    </main>
+        <button class="sort_btn sort_btn--in">&uarr;</button>
+    </div>
+    
+        
+    
     <script src="/Login_/index.js"></script>
 </body>
 </html>
