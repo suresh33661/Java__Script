@@ -18,7 +18,7 @@ const account3 = {
     owner: "Steve Thomas Williams",
     movements: [200, -200, 350, -200, -20, 50, 400, -460],
     interestRate: 0.7,
-    pin: 4444,
+    pin: 3333,
 }
 
 const account4 = {
@@ -37,8 +37,8 @@ const labeDate = document.querySelector('.date');
 const labelBalance = document.querySelector('.balance_value');
 const labelSumIn = document.querySelector('.summary_value--in');
 const labeSumOUt = document.querySelector('.summary_value--out');
-const labelSumInterest = document.querySelector('.summary_value-interest');
-
+const labelSumInterest = document.querySelector('.summary_value--interest');
+const valid = document.querySelector('.valid_credentials');
 
 const containerApp = document.querySelector('.app');
 const containerMovements = document.querySelector('.movements');
@@ -70,19 +70,122 @@ const displayMovements = function (movements) {
     const html = `
     <div class="movements_row">
         <div class="movements_type movements_type--${type}">${i+1} ${type}</div>
-        <div class="movements_value ">${mov}</div>`
+        <div class="movements_value ">${mov}€</div>`
 
         containerMovements.insertAdjacentHTML('afterbegin', html);
     });
 
 }
-displayMovements(account1.movements)
 
-const createUsernames = 
 
-const {movements}  = account1;
 
-const user = 'Steve Thomas Williams'
-const username = user.toLowerCase().split(' ').map(name => name[0])
 
-console.log(username);
+
+const createUsernames = function (account){
+account.forEach(function(acc){
+    acc.user = acc.owner.toLowerCase().split(' ').map(name => name[0]).join('');
+})
+}
+createUsernames(accounts);
+console.log(accounts)
+
+
+const {movements} = account1
+const deposits = movements.filter(mov => mov > 0)
+console.log(deposits)
+
+
+
+const calPrintBalance = function(movement){
+    const balance = movement.reduce((acc, mov) => acc + mov, 0)
+    labelBalance.textContent = `${balance}€`
+    
+}
+
+
+
+// * IN , Out and Interest values
+
+
+
+
+const calDisplaySummary = function(movements){
+    const incomes = movements.filter(mov => mov > 0).reduce((acc , mov) => acc + mov, 0)
+    labelSumIn.textContent = `${incomes}€`
+}
+
+
+
+const calDisplaySummaryOut = function(movements){
+    const Out = movements.filter(mov => mov < 0).reduce((acc,cur) => acc + cur,0);
+    labeSumOUt.textContent = `${Math.abs(Out)}€`
+}
+calDisplaySummaryOut(movements)
+
+
+
+
+
+
+// * End of IN , Out and Interest //
+
+// * Implemeting Login //
+
+let currentAccount;
+
+
+
+btnLogin.addEventListener('click',function(event){
+   event.preventDefault();
+ currentAccount =  accounts.find(acc => acc.user === inputLoginUsername.value);
+//console.log(currentAccount)
+
+if(currentAccount?.pin === Number(inputLoginPin.value)){
+    // Display UI and Message
+    labelWelcome.textContent = `Welcome back ! ${currentAccount.owner.split(' ')[0]}`
+    containerApp.style.opacity = 100;
+    valid.style.opacity = 0;
+
+    // Clear Input fields
+    inputLoginUsername.value = inputLoginPin.value = '';
+
+    // Display Movements
+    displayMovements(currentAccount.movements)
+
+    // Display Balance
+    calPrintBalance(currentAccount.movements)
+
+    // Display Summary
+
+    calDisplaySummary(currentAccount.movements)
+    calDisplaySummaryOut(currentAccount.movements)
+
+
+    const interest = function(movements){
+        const int = movements.filter(mov => mov > 0).map(deposit => deposit * currentAccount.interestRate/100).filter(mov => mov > 1).reduce((acc,curr ) => acc + curr,0);
+        labelSumInterest.textContent = `${int.toFixed(1)}€`
+    }
+    interest(currentAccount.movements)
+}
+else {
+    containerApp.style.opacity = 0;
+    valid.style.opacity = 1;
+    inputLoginUsername.value = inputLoginPin.value = '';
+    
+}
+
+});
+
+
+// Money Transfer
+
+btnTransfer.addEventListener('click',function(e){
+    e.preventDefault();
+    const amount = Number(inputTransferAmount.value);
+    const receiveAcc = accounts.find(acc => acc.user === inputTransferTo.value);
+    console.log(amount,receiveAcc);
+
+   // if(amount > 0 && )
+    
+});
+

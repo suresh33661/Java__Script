@@ -26,8 +26,24 @@
                 class="login_input login_input--pin"/>
                 <button class="login_btn">&rarr;</button>
         </form>
+        <h1 class="valid_credentials">Please Enter valid Credentials</h1>
     </nav>
     <main class="app">
+        <div class="summary">
+            <div class="summary_row">
+                <div class="summary_label">In</div>
+                <div class="summary_value summary_value--in">0000$</div>
+            </div>
+            <div class="summary_row">
+                <div class="summary_label">Out</div>
+                <div class="summary_value summary_value--out">-0000$</div>
+            </div>
+            <div class="summary_row">
+                <div class="summary_label">Interest</div>
+                <div class="summary_value summary_value--interest">0000$</div>
+            </div>
+            <button class="sort_btn sort_btn--in">&uarr;</button>
+        </div>
         <!-- Balance -->
         <div class="balance">
             <div class="line">
@@ -50,7 +66,6 @@
                 <div class="movements_value">-0000$</div>
             </div>
         </div>
-
     
         <div class="operation">
             <!-- Money transfer -->
@@ -59,7 +74,6 @@
                 <h2 class="money-transfer_heading">Transfer money</h2>
 
                 <div class="money-transfer_input--from">
-                    <p>From</p>
                     <input
                         type="text"
                         placeholder="Transfer to"
@@ -82,6 +96,7 @@
                     class="loan_input loan_input--amount"/>
                 <button class="loan_btn">&rarr;</button>
             </div>
+            
 
             <!-- Close account -->
             <div class="close-account">
@@ -98,25 +113,11 @@
                 <button class="close-account_btn">&rarr;</button>
             </div>
         </div>
-    </main>
+    
 
     <!-- Summary -->
-    <div class="summary">
-        <div class="summary_row">
-            <div class="summary_label">In</div>
-            <div class="summary_value summary_value--in">0000$</div>
-        </div>
-        <div class="summary_row">
-            <div class="summary_label">Out</div>
-            <div class="summary_value summary_value--out">-0000$</div>
-        </div>
-        <div class="summary_row">
-            <div class="summary_label">Interest</div>
-            <div class="summary_value summary_value--interest">0000$</div>
-        </div>
-        <button class="sort_btn sort_btn--in">&uarr;</button>
-    </div>
     
+    </main>
         
     
     <script src="/Login_/index.js"></script>
